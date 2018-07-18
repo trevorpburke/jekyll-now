@@ -11,7 +11,7 @@ Whenever I begin a project that involves more than a simple Python file I have a
 3. [Logging](###logging)
 4. [Linter](###linter)
 
-### <a name="venv"></a> Virtual Environment Set Up
+### <a href="###venv"></a> Virtual Environment Set Up
 
 Virtual environments separate your project, its Python version and its dependencies from your machine's Python installation and globally installed dependencies. Within your project's directory run this command:
 
@@ -24,13 +24,13 @@ This establishes a Python3 installation within your project. To begin installing
 
 When you're not working on your project you can deactivate the environment with simply `deactivate`
 
-### <a name="git"></a> Git Setup
+### <a href="git"></a> Git Setup
 
-### <a name="logging"></a> Logging
+### <a href="logging"></a> Logging
 
-### <a name="readme"></a> README
+### <a href="readme"></a> README
 
-### <a name="linter"></a> Linter & PEP8
+### <a href="linter"></a> Linter & PEP8
 
 
 
