@@ -1,4 +1,7 @@
-## Navigating an Unfamiliar or Confusing Database: A Tale of `psql` Tricks
+-layout: post
+-title: Navigating an Unfamiliar or Confusing Database
+
+## A Tale of `psql` Tricks
 
 Thus far in my career I've worked with varyingly complex databases, from well-documented with foreign keys explicitly defined to absolute mayhem. This range of DDL quality has led me to one of the most useful tools within the PostgreSQL ecosystem: `information_schema`
 
