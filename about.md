@@ -6,12 +6,12 @@ permalink: /about/
 
 Bay Area native, Python and SQL programmer, avid mountain biker and skier, YouTube cooking show enthusiast!
 
-Personally Preferred Python Packages:
+### Professional Interests
+  
   * sqlalchemy
   * pandas
   * flask
 
-Standard Library Favorites:
   * itertools
   * collections
   * typing 
