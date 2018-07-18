@@ -24,11 +24,12 @@ Here's a sample of this table:
 
 So, let's say I need to find tables that contain the value `entered_date` because I need to update some records, but I don't know all the tables that contain this value. Here's how I'd find them:
 
+    -- using LIKE here to capture any similarly named fields, especially if database messy
     SELECT 
       table_name,
       column_name
     FROM information_schema.columns
-    WHERE column_name = 'entered_date';
+    WHERE column_name LIKE 'entered%';
 
 Though this is beyond the scope of this post, I could then use a little Bash to UPDATE the `entered_date` value from those tables.
 
