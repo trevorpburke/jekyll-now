@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How I Begin a Python Project
+tags: python virtual environment git linter logging pep8 
 ---
 
 Whenever I begin a project that involves more than a simple Python file I have a (somewhat flexible) set of tasks I complete prior to writing any actual code. These steps can be applied to essentially any Python project and I'm sure there are more steps to include. Feel free to comment some suggestions!
