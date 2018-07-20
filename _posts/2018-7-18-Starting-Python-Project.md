@@ -18,13 +18,13 @@ Whenever I begin a project that involves more than a simple Python file I have a
 Virtual environments separate your project, its Python version and its dependencies from your machine's Python installation and globally installed dependencies. Within your project's directory run this command:
 
 ```bash
-python3 -m venv /path/to/your/project
+$ python3 -m venv /path/to/your/project
 ```
 
 This establishes a Python3 installation within your project. To begin installing packages within this environment:
 ```bash
-source bin/activate
-pip install pandas
+$ source bin/activate
+$ pip install pandas
 ```
 When you're not working on your project you can deactivate the environment with simply `deactivate`
 
