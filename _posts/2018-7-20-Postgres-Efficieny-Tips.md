@@ -1,4 +1,5 @@
 ---
+layout: post
 title: PostgreSQL Efficiency Tips - pgpass
 tags: postgresql postgres psql Efficiency
 ---
