@@ -17,13 +17,15 @@ Whenever I begin a project that involves more than a simple Python file I have a
 
 Virtual environments separate your project, its Python version and its dependencies from your machine's Python installation and globally installed dependencies. Within your project's directory run this command:
 
-    python3 -m venv /path/to/your/project
+```bash
+python3 -m venv /path/to/your/project
+```
 
 This establishes a Python3 installation within your project. To begin installing packages within this environment:
-
-     source bin/activate
-     pip install pandas
-
+```bash
+source bin/activate
+pip install pandas
+```
 When you're not working on your project you can deactivate the environment with simply `deactivate`
 
 
@@ -65,53 +67,55 @@ In essence, the `logging` module provides a way to track events and errors based
      * CRITICAL
 
 This module is extremely powerful and offers tons of configuration options, but I've found that the most effective method is creating a dictionary logging object, importing that dictionary into your application, and logging to a simple text file.
-
-    # logging_config.py
-    config = {
-        'version': 1,
-        'formatters': {
-            'simple': {
-                'format': '%(asctime)s %(levelname)s %(name)s: %(message)s'
-            },
+```python
+# logging_config.py
+config = {
+    'version': 1,
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(levelname)s %(name)s: %(message)s'
         },
-        'handlers': {
-            'file': {
-                'level': 'INFO',
-                'formatter': 'simple',
-                'class': 'logging.FileHandler',
-                'filename': 'logs/errors.log'
-            },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'formatter': 'simple',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/errors.log'
         },
-        'loggers': {
-            'errors': {
-                'handlers': ['file'],
-                'level': 'INFO',
-                'propagate': True
-            },
-        }
+    },
+    'loggers': {
+        'errors': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True
+        },
     }
-
+}
+```
 I'll eventually write a more detailed post about the `logging` module, but to keep this post succinct I'll briefly explain what's happening here. This config contains information about how the log is formatted to its handler, which in this case is a file, 'logs/errors.log'. Also, I've established that I only care about errors from the INFO level and above; this will ignore DEBUG errors. DEBUG errors can end up clogging logs and defeat the purpose of logs.
 
 Now, in order to actually log events:
 
-    # app.py
-    import logging
-    import logging.config
-    from logging_config import config
-    from other_module import pull_data
+```python
+# app.py
+import logging
+import logging.config
+from logging_config import config
+from other_module import pull_data
 
-    logging.config.dictConfig(config)
-    logger = logging.getLogger('errors')
+logging.config.dictConfig(config)
+logger = logging.getLogger('errors')
 
-    def get_data():
-        """
-        Fake function to get data
-        """ 
-        try:
-            conn = pull_data()
-        except DataError as e:
-            logger.warning(e)
+def get_data():
+    """
+    Fake function to get data
+    """ 
+    try:
+        conn = pull_data()
+    except DataError as e:
+        logger.warning(e)
+```
 
 I created a psuedo-codey function here to illustrate how one can funnel the error from an Exception into a log file. 
 
